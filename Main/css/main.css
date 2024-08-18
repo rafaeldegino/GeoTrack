@@ -1,0 +1,321 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none !important;
+}
+
+
+body{
+    background-color: #1C1C1C;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Nav bar */
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header{
+  background-color: #fff;
+    width: 100%;
+    padding: 15px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: "Inter", sans-serif;
+    transition: 0.5s;
+    z-index: 40 !important;
+    
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0 40px;
+}
+
+header a{
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    color: #1C1C1C;
+}
+header.rolagem{
+    background-color: aliceblue;
+    padding: 20px 4%;
+}
+
+header.rolagem a{
+    color: #1C1C1C;
+}
+
+/* Chamada e desc para os cards */
+.video-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Adiciona um fundo preto semi-transparente */
+}
+
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 265vw; /* Ajuste para aumentar o zoom */
+  height: 265vh; /* Ajuste para aumentar o zoom */
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1; /* Define a ordem de empilhamento */
+  filter: brightness(40%); /* Ajusta a luminosidade do vídeo */
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* Transparente */
+  z-index: 2; /* Camada acima do iframe */
+}
+
+.chamada {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.chamada h1 {
+  position: relative;
+  z-index: -11 !important;
+  font-size: 40px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.chamada h1 span{
+    color: #F29F05;
+    font-family: "Inter", sans-serif; 
+}
+
+.desc{
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    color: aliceblue;
+    text-align: center !important;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+}
+/* Cards */
+.cards1, .cards2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem; /* Ajuste do espaçamento entre os cards */
+  padding: 2rem;
+}
+
+.cards2{
+  margin-top: -200px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+.group:hover .icon {
+    filter: brightness(0) invert(1);
+}
+
+.self-end {
+    display: inline-block;
+    margin-right: 10px; /* Define o espaçamento entre as imagens */
+}
+
+/* Social */
+.btn_social { 
+
+  width:100%; 
+  float:left; 
+  display:flex; 
+  margin:auto; 
+ }
+ 
+ .btn_social ul  { 
+ 
+  width:auto; 
+  margin:auto; 
+  float:left; 
+  display:block; 
+ }
+ 
+ .btn_social ul li  { 
+ 
+  position:relative; 
+  background:white; 
+  list-style:none; 
+  float:left; 
+  margin:5px; 
+  z-index:1; 
+  overflow:hidden; 
+  border-radius:3px; 
+  font-size:1.5em; 
+  text-align:center; 
+ }
+ 
+ .btn_social ul li a  { 
+ 
+  width:50px; 
+  height:50px; 
+  line-height:53px; 
+  display:block; 
+  text-decoration:none; 
+  color:#fff; 
+  transition:.4s;
+ 
+ }
+ 
+ .btn_social ul li::before { 
+ 
+  transition:0.4s; 
+  position:absolute; 
+  content:''; 
+  width:100%; 
+  height:100%; 
+  top:90%; 
+  left:0; 
+  background:#F29F05; 
+  z-index:-1; 
+  transform: scale(1); 
+  transition:.4s; 
+ }
+ 
+ .btn_social ul li:hover::before { transition:0.4s; top:0%; }
+ .btn_social ul li a:hover       { color:white; }
+
+ .btn_social ul li img {
+  display: block; /* Torna a imagem um bloco para manipular margens */
+  margin: auto; /* Centraliza horizontalmente */
+  margin-top: 15px;
+}
+
+footer p{
+  font-family: "Inter", sans-serif;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Adicione estas regras para fazer o site responsivo */
+
+/* Para telas menores que 768px */
+@media screen and (max-width: 768px) {
+  
+  .cards1, .cards2 {
+    flex-direction: column; /* Altera a direção da flexbox para coluna */
+    align-items: center; /* Centraliza os cards na horizontal */
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .service-card {
+    width: 90%; /* Ajusta a largura dos cards */
+    margin-bottom: 30px; /* Adiciona espaço entre os cards */
+  }
+
+  .video-bg {
+    width: 495vw; /* Ajuste para aumentar o zoom */
+    height: 495vh; /* Ajuste para aumentar o zoom */
+  }
+
+  .chamada h1 {
+    font-size: 30px; /* Reduz o tamanho do título */
+    text-align: center;
+  }
+
+  .desc {
+    font-size: 20px; /* Reduz o tamanho da descrição */
+  }
+
+  .service-card {
+    width: 90%; /* Ajusta a largura dos cards */
+    margin-bottom: 30px; /* Adiciona espaço entre os cards */
+  }
+
+  .btn_social ul li {
+    margin: 5px; /* Ajusta a margem entre os ícones sociais */
+  }
+
+  .btn_social ul li img {
+    width: 40px; /* Reduz o tamanho dos ícones sociais */
+    height: 40px;
+  }
+
+  footer p {
+    font-size: 14px; /* Reduz o tamanho do texto do rodapé */
+  }
+}
+
+/* Para telas menores que 480px */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 20px 4%; /* Reduz ainda mais o padding no cabeçalho */
+  }
+
+  header ul li {
+    margin: 0 10px; /* Reduz ainda mais a margem entre os itens do menu */
+  }
+
+  .chamada h1 {
+    font-size: 25px; /* Reduz ainda mais o tamanho do título */
+  }
+
+  .desc {
+    font-size: 18px; /* Reduz ainda mais o tamanho da descrição */
+  }
+
+
+  .service-card {
+    width: 90%; /* Ajusta ainda mais a largura dos cards */
+  }
+
+  .btn_social ul li img {
+    width: 30px; /* Reduz ainda mais o tamanho dos ícones sociais */
+    height: 30px;
+  }
+
+  .cards2{
+    margin-top: 1px;
+  }
+
+  footer{
+    margin-top: 90px;
+  }
+
+  footer p {
+    font-size: 12px; /* Reduz ainda mais o tamanho do texto do rodapé */
+  }
+}
+
